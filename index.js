@@ -1,8 +1,15 @@
 //const { json } = require('body-parser');
 const express = require('express');
 const fs = require('fs');
+const morgan = require('morgan');
 
 const app = express();
+
+// create a write stream (in append mode)
+var accessLogStream = fs.createWriteStream(__dirname+'\\access.log', { flags: 'a' });
+// setup the logger
+app.use(morgan('combined', { stream: accessLogStream }))
+
 
 app.use(express.json());
 //app.use(express.urlencoded());
@@ -65,7 +72,7 @@ app.get('/profile',(req,res)=>{
         // console.log(user);
         // console.log(query);
         user.forEach(u => {
-            console.log(u.id);
+            //console.log(u.id);
             
             res.write(`<h3>id = ${u.id}</h3>`);
             res.write(`<h3>username = ${u.name}</h3>`);
@@ -89,6 +96,10 @@ app.get('/myimage',(req,res)=>{
 
 app.get('/style',(req,res)=>{
     res.sendFile(__dirname + "\\style.css");
+});
+
+app.get('/logs',(req,res)=>{
+    res.sendFile(__dirname+'\\access.log');
 });
 
 app.use("*", function (req, res) {
