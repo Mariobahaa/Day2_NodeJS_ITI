@@ -1,4 +1,4 @@
-const { json } = require('body-parser');
+//const { json } = require('body-parser');
 const express = require('express');
 const fs = require('fs');
 
@@ -34,7 +34,13 @@ app.post('/profile',(req,res)=>{
         });
     })
 
-})
+});
+
+app.get('/myimage',(req,res)=>{
+    //console.log(__dirname  + "\\3.jpeg");
+    //res.send('');
+    res.sendFile(__dirname + "\\3.jpeg");
+});
 
 
 app.listen(3000,()=>{
