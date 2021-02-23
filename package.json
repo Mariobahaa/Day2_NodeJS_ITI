@@ -1,0 +1,26 @@
+{
+  "name": "day2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mariobahaa/Day2_NodeJS_ITI.git"
+  },
+  "author": "Mario Bahaa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mariobahaa/Day2_NodeJS_ITI/issues"
+  },
+  "homepage": "https://github.com/Mariobahaa/Day2_NodeJS_ITI#readme"
+}
