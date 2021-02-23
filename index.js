@@ -24,14 +24,16 @@ app.post('/profile',(req,res)=>{
         fs.writeFile('./users.txt',JSON.stringify(usersList), (err,data)=>{
             if(err!= null && err!=undefined){
                 console.log(err.message);
+                res.send('please try again later')
             }    
             else{
                 console.log('saved successfully');
+                res.send('Saved');
+
             }
         });
     })
 
-    res.send('Saved');
 })
 
 
