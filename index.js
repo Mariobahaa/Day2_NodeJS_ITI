@@ -37,9 +37,11 @@ app.post('/profile',(req,res)=>{
 });
 
 app.get('/myimage',(req,res)=>{
-    //console.log(__dirname  + "\\3.jpeg");
-    //res.send('');
     res.sendFile(__dirname + "\\3.jpeg");
+});
+
+app.get('/style',(req,res)=>{
+    res.sendFile(__dirname + "\\style.css");
 });
 
 
